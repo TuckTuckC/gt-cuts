@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react';
 
 function Navbar() {
   return (
     <div>
-      This is the Navbar
+      <a href="/">Home</a>
+      <a href="/portfolio">Portfolio</a>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
