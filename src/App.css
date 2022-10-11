@@ -1,13 +1,21 @@
 :root {
-  --main-bg-color: #f0ead2;
+  --main-bg-color: #bababa;
   --light-green: #dde5b6;
-  --dark-green: #adc178;
+  --dark-green: #ecec00;
   --light-brown: #a98467;
   --dark-brown: #6c584c;
+  --trim: rgb(86, 86, 86);
 }
 
 .App {
   background-color: var(--main-bg-color);
   width: 100vw;
   height: 100vh;
+}
+
+.components {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,8 +1,9 @@
 import React from 'react';
+import './Home.css';
 
 function Home() {
   return (
-    <div>
+    <div className='Home'>
       <h1>GT Streamlined</h1>
       <h2>What We Do</h2>
       <p>Input mission statement here</p>

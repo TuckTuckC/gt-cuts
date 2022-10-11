@@ -1,15 +1,24 @@
 .Navbar {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     height: 7vh;
-    border-bottom: 3px solid black;
+    border-bottom: 1px solid var(--trim);
     background-color: var(--light-brown);
 }
 
 .Navbar > a {
     display: flex;
     align-items: center;
-    border: 0.2vw solid black;
+    text-decoration: none !important;
+    color: white !important;
+    padding: 0.5vh;
     height: 4vh;
+}
+
+.divider {
+    width: 2px;
+    height: 5vh;
+    background-color: var(--trim);
+    margin: 0 4vw;
 }
