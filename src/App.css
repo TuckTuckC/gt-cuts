@@ -11,9 +11,17 @@
   background-color: var(--main-bg-color);
   width: 100vw;
   height: 100vh;
+  background-image: url('./images/HomeBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 7vh;
+  background-color: rgba(21, 21, 21, 0.5);
+  background-blend-mode: multiply;
 }
 
 .components {
+
+  margin-top: 7vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

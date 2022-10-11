@@ -15,6 +15,8 @@ function Navbar() {
       <a href="/">Plumbing</a>
       <div className="divider"></div>
       <a href="/">Electrical</a>
+      <div className="divider"></div>
+      <a href="/">Our Crew</a>
     </div>
   );
 };
