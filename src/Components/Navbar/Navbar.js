@@ -6,11 +6,13 @@ function Navbar() {
     <div className='Navbar'>
       <a href="/">GT</a>
       <div className="divider"></div>
-      <a href="/lawn-care">Lawn Care</a>
+      <a href="/lawncare">Lawn Care</a>
       <div className="divider"></div>
       <a href="/">Yard Clean Up</a>
       <div className="divider"></div>
       <a href="/">Tree Services</a>
+      <div className="divider"></div>
+      <a href="/">Pressure Washing</a>
       <div className="divider"></div>
       <a href="/">Plumbing</a>
       <div className="divider"></div>

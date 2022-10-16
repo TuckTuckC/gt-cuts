@@ -1,0 +1,9 @@
+.Lawncare {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: auto;
+    width: 80%;
+    background-color: rgb(255, 242, 215);
+    border-radius: 5px;
+    padding: 2vh;
+}
