@@ -6,3 +6,10 @@
     background-color: rgb(255, 242, 215);
     border-radius: 5px;
 }
+
+.services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    width: 50%;
+}
