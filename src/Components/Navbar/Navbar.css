@@ -1,4 +1,4 @@
-.Navbar {
+/* .Navbar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,4 +21,24 @@
     height: 5vh;
     background-color: var(--trim);
     margin: 0 2.5vw;
+} */
+
+.logo {
+    height: 60px;
+    border-radius: 30px;
+}
+
+.Navbar {
+    height: 7vh;
+    font-size: large;
+    position: fixed;
+}
+
+.navContainer {
+    background-color: rgba(0, 0, 0, 0.75) !important;
+    z-index: 1 !important;
+}
+
+.navDrop {
+    /* background-color: rgba(0, 0, 0, 0.75) !important; */
 }

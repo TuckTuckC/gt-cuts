@@ -1,5 +1,6 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Components
 import Home from './Components/Home/Home';
@@ -11,10 +12,22 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="components">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/lawncare" element={<Lawncare />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lawncare" element={<Lawncare />} />
+        </Routes>
+      </div>
+      <div className="components">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lawncare" element={<Lawncare />} />
+        </Routes>
+      </div>
+      <div className="components">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/lawncare" element={<Lawncare />} />
+        </Routes>
       </div>
     </div>
   );
