@@ -1,5 +1,4 @@
 import React from 'react';
-import './Navbar.css';
 
 import logo from '../../images/Logo.png';
 
@@ -8,15 +7,49 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import './Navbar.css';
+
 function Navigation() {
   return (
     <div className='Navbar col-12'>
+      
+      {/* <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/"><img src={logo} alt="Logo" className="logo" /></a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="/about">Who We Are</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Contact</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#">Lawncare</a></li>
+                  <li><a className="dropdown-item" href="#">Yard Clean-Up</a></li>
+                  <li><a className="dropdown-item" href="#">Tree Services</a></li>
+                  <li><a className="dropdown-item" href="#">Pressure Washing</a></li>
+                  <li><a className="dropdown-item" href="#">Plumbing</a></li>
+                  <li><a className="dropdown-item" href="#">Electrical</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> */}
     <Navbar collapseOnSelect className="navContainer" expand="lg" bg="dark" variant="dark">
       <Container className="m-0 w-100">
         <Navbar.Brand href="/"><img src={logo} alt="Logo" className="logo" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="me-auto navFlex">
             <Nav.Link href="#features">Who We Are</Nav.Link>
             <Nav.Link href="#pricing">Contact</Nav.Link>
             <NavDropdown title="Services" className='navDrop' id="collasible-nav-dropdown">

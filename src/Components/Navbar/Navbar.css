@@ -29,16 +29,30 @@
 }
 
 .Navbar {
+    padding: 0;
     height: 7vh;
     font-size: large;
     position: fixed;
 }
 
 .navContainer {
+    width: 100% !important;
     background-color: rgba(0, 0, 0, 0.75) !important;
     z-index: 1 !important;
 }
 
 .navDrop {
     /* background-color: rgba(0, 0, 0, 0.75) !important; */
+}
+
+.navFlex {
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-evenly !important;
+
+}
+
+#responsive-navbar-nav {
+    width: 800px !important;
 }

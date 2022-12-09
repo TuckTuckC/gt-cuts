@@ -7,16 +7,18 @@
   --trim: rgb(86, 86, 86);
 }
 
-.App {
-  background-color: var(--main-bg-color);
-  width: 100vw;
-  height: 100vh;
-  background: rgb(107,196,151);
-  background: linear-gradient(238deg, rgba(107,196,151,1) 0%, rgba(221,229,182,1) 54%, rgba(108,88,76,1) 100%);
+body {
+  background: rgb(65,122,93);
+  background: linear-gradient(238deg, rgba(65,122,93,1) 0%, rgba(108,88,76,1) 100%);
   background-attachment: fixed;
   background-size: cover;
   background-color: rgba(21, 21, 21, 0.5);
   background-blend-mode: multiply;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
 }
 
 .components {
