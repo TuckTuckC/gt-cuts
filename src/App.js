@@ -17,18 +17,6 @@ function App() {
           <Route path="/lawncare" element={<Lawncare />} />
         </Routes>
       </div>
-      <div className="components">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lawncare" element={<Lawncare />} />
-        </Routes>
-      </div>
-      <div className="components">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lawncare" element={<Lawncare />} />
-        </Routes>
-      </div>
     </div>
   );
 };

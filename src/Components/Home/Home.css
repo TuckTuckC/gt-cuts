@@ -1,11 +1,37 @@
 .Home {
-    margin-top: 14vh;
+    margin: 0;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
-    background-color: rgb(255, 242, 215);
-    border-radius: 5px;
+    width: calc(100vw - 5.25rem);
+    border-bottom: 0.15rem solid var(--trim);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: var(--light-brown);
+    width: 90rem;
+}
+
+.column {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.column h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    height: 0.1rem;
+    border: 0.1rem solid var(--light-green);
 }
 
 .services {

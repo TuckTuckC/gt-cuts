@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,300&display=swap');
+
 :root {
+  font-size: 16px;
   --main-bg-color: #bababa;
-  --light-green: #dde5b6;
-  --dark-green: #ecec00;
+  --light-green: #85ad4f;
+  --light-green-transparent: #85ad4f90;
+  --dark-green: #285e45;
   --light-brown: #a98467;
   --dark-brown: #6c584c;
   --trim: rgb(86, 86, 86);
+}
+
+* {
+  font-family: 'Chivo Mono', monospace;
 }
 
 body {
@@ -14,14 +22,24 @@ body {
   background-size: cover;
   background-color: rgba(21, 21, 21, 0.5);
   background-blend-mode: multiply;
+  margin: 0;
+  padding: 0;
 }
 
-.App {
-  width: 100vw;
-  height: 100vh;
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--trim);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--light-green);
 }
 
 .components {
+  margin-left: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
