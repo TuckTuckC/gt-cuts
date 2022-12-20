@@ -8,17 +8,23 @@ function Home() {
         <div className="column">
           <h1>Located in Bumbcombe & Haywood County</h1>
           <div className="divider"></div>
-          <h1>Keep Your Yard Healthy and Beautiful!</h1>
+          <h1>Keeping Homes Beautiful and Maintained!</h1>
         </div>
 
-        <p>"We will bring fresh and innovative ideas and solutions, along with a variety of quality services, to help improve and polish your everyday life"</p>
-        <button>GET STARTED NOW</button>
+        <div className="column2">
+          <p>"We will bring fresh and innovative ideas and solutions, along with a variety of quality services, to help improve and polish your everyday life"</p>
+          <div className="contact">
+            <h3>Contact Us</h3>
+            <p>Call Us: <a href="tel:8284050462" className="contactLink phone">(828) 405-0462</a></p>
+            <p>Email Us: <a className='contactLink email' href="mailto: GT.Streamlined1@gmail.com">GT.Streamlined1@gmail.com</a></p>
+          </div>
+        </div>
+        
+        <button className='start'>GET STARTED</button>
+
       </div>
-      <h2>Bumbcombe & Haywood</h2>
       
-      <h3>Contact Info</h3>
-      <p>Phone: (828) 405-0462</p>
-      <p>Email: GT.Streamlined1@gmail.com</p>
+
       {/* <div className="card">
         <h2>Services We Offer</h2>
         <div className="services">

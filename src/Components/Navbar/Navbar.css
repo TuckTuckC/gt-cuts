@@ -11,6 +11,7 @@
     transition: width 200ms ease;
     z-index: 1;
     overflow: hidden;
+    box-shadow: 10px 0 5px -2px rgb(73, 73, 73);
 }
 
 .navbar-nav {
