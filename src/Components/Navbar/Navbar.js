@@ -4,7 +4,6 @@ import logo from '../../images/Logo.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonDigging, faPaperPlane, faFolderClosed, faInfo } from '@fortawesome/free-solid-svg-icons';
-import { far } from '@fortawesome/free-regular-svg-icons';
 
 import './Navbar.css';
 
