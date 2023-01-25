@@ -5,17 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // Components
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
-import Lawncare from './Components/Lawncare/Lawncare';
+import About from './Components/About/About';
+import Services from './Components/Services/Services';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <div className="components">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lawncare" element={<Lawncare />} />
-        </Routes>
+          <Home />
+          <About />
+          <Services />
       </div>
     </div>
   );

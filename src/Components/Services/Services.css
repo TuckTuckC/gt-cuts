@@ -1,0 +1,40 @@
+.services {
+    flex-direction: column;
+    margin-bottom: 50vh;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.serviceList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: fit-content;
+    padding: 5rem 5rem 0 5rem;
+}
+
+.serviceItem {
+    width: 12rem;
+    height: 6rem;
+    padding: 1rem;
+    background-color: var(--light-green);
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.3rem;
+    border-radius: 1rem;
+}
+
+.more {
+    color: var(--light-green);
+    font-size: 2.5rem;
+    font-weight: 600;
+}

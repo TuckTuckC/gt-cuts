@@ -43,3 +43,14 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
 }
+
+.component {
+  margin: 5rem 0 0 0;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(100vw - 5.25rem);
+  background-color: var(--trim);
+  width: 90rem;
+}

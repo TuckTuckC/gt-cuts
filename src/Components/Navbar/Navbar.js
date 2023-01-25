@@ -25,14 +25,14 @@ function Navigation() {
         </li>
         <li className='nav-list'>
           <a className="nav-link" href="/">
-            <FontAwesomeIcon className='nav-icon' icon={faFolderClosed} />
-            <span className='link-text'>Portfolio</span>
+            <FontAwesomeIcon className='nav-icon' icon={faPersonDigging} />
+            <span className='link-text'>Services</span>
           </a>
         </li>
         <li className='nav-list'>
           <a className="nav-link" href="/">
-            <FontAwesomeIcon className='nav-icon' icon={faPersonDigging} />
-            <span className='link-text'>Services</span>
+            <FontAwesomeIcon className='nav-icon' icon={faFolderClosed} />
+            <span className='link-text'>Our Work</span>
           </a>
         </li>
         <li className='nav-list'>
