@@ -14,8 +14,8 @@ function App() {
       <Navbar />
       <div className="components">
           <Home />
-          <About />
           <Services />
+          <About />
       </div>
     </div>
   );

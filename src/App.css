@@ -54,3 +54,7 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--trim);
   width: 90rem;
 }
+
+.App {
+  margin-bottom: 10rem;
+}

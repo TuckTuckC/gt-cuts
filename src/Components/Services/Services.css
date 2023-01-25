@@ -1,6 +1,5 @@
 .services {
     flex-direction: column;
-    margin-bottom: 50vh;
 }
 
 .categories {
@@ -31,6 +30,10 @@
     font-weight: 500;
     font-size: 1.3rem;
     border-radius: 1rem;
+}
+
+.serviceTitle {
+    font-size: 2rem;
 }
 
 .more {

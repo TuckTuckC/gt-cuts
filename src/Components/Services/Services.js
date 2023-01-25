@@ -8,7 +8,7 @@ function Services() {
       <h1 className="title">Services</h1>
       <div className="categories">
         <div className="serviceList">
-          <div className="title">Landscaping</div>
+          <div className="serviceTitle title">Landscaping</div>
           <div className="serviceItem">Lawn Mowing</div>
           <div className="serviceItem">Leaf Blowing</div>
           <div className="serviceItem">Landscape Rock Installation</div>
@@ -17,7 +17,7 @@ function Services() {
           <div className="serviceItem">Tree Removal</div>
         </div>
         <div className="serviceList">
-          <div className="title">Plumbing</div>
+          <div className="serviceTitle title">Plumbing</div>
           <div className="serviceItem">New-Construction Water Lines</div>
           <div className="serviceItem">New-Construction Drain Lines</div>
           <div className="serviceItem">Bathroom Remodeling</div>
@@ -26,7 +26,7 @@ function Services() {
           <div className="serviceItem">Quality of Life Improvements</div>
         </div>
         <div className="serviceList">
-          <div className="title">Electrical</div>
+          <div className="serviceTitle title">Electrical</div>
           <div className="serviceItem">Lawn Mowing</div>
           <div className="serviceItem">Leaf Blowing</div>
           <div className="serviceItem">Pressure Washing</div>
