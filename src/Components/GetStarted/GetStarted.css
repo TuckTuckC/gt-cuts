@@ -1,0 +1,10 @@
+.GetStarted {
+    z-index: 3;
+    position: fixed;
+    width: 40rem;
+    height: 30rem;
+    border: 0.2rem solid white;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
+}

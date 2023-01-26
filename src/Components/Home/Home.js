@@ -8,16 +8,20 @@ import cleanPanel from '../../images/bestWork/cleanPanel.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
+import {useEffect, useState} from 'react';
+
 function Home() {
 
-  const buttons = document.querySelectorAll("[data-carousel-button]");
-  console.log(buttons);
-  buttons.forEach(button => {
+
+  useEffect(() => {
+    const buttons = document.querySelectorAll("[data-carousel-button]");
+    console.log(buttons);
+    buttons.forEach(button => {
     button.addEventListener("click", () => {
       const offset = button.dataset.carouselButton === 'next' ? 1 : -1
       const slides = button
         .closest('[data-carousel]')
-        .querySelector('[data-slides');
+        .querySelector('[data-slides]');
 
         const activeSlide = slides.querySelector('[data-active]');
         let newIndex = [...slides.children].indexOf(activeSlide) + offset;
@@ -27,8 +31,10 @@ function Home() {
 
         slides.children[newIndex].dataset.active = true;
         delete activeSlide.dataset.active;
+      })
     })
-  })
+  });
+  
 
   return (
     <div className='component container'>
