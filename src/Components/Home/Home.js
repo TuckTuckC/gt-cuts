@@ -10,12 +10,16 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import {useEffect, useState} from 'react';
 
-function Home() {
+function Home({setOpened}) {
 
+  const getStarted = document.querySelector('.GetStarted')
+
+  const start = () => {
+    setOpened(true)
+  }
 
   useEffect(() => {
     const buttons = document.querySelectorAll("[data-carousel-button]");
-    console.log(buttons);
     buttons.forEach(button => {
     button.addEventListener("click", () => {
       const offset = button.dataset.carouselButton === 'next' ? 1 : -1
@@ -33,11 +37,12 @@ function Home() {
         delete activeSlide.dataset.active;
       })
     })
+    console.log(getStarted);
   });
   
 
   return (
-    <div className='component container'>
+    <div className='component home'>
       <div className='name'>GT Streamlined</div>
       <div className="carouselContainer">
         <div className="carousel" data-carousel>
@@ -76,7 +81,7 @@ function Home() {
           </div>
         </div>
         
-        <button className='start'>GET STARTED</button>
+        <button className='start' onClick={() => setOpened(true)}>GET STARTED</button>
 
       </div>
     </div>

@@ -1,10 +1,28 @@
 .GetStarted {
     z-index: 3;
     position: fixed;
-    width: 40rem;
-    height: 30rem;
-    border: 0.2rem solid white;
+    width: 60rem;
+    height: 40rem;
+    background: linear-gradient(var(--dark-brown) 0%, #7d9460 100%);
+    border-radius: 1rem;
+    visibility: hidden;
+}
+
+.opened {
     top: 50%;
     transform: translateY(-50%);
-    visibility: hidden;
+    visibility: visible;
+    transition: 200ms;
+    transition-delay: 200ms;
+}
+
+.startInfo {
+    font-size: 1.7rem;
+    margin: 0 2rem;
+    padding: 2rem;
+    color: var(--light-green);
+    font-weight: 600;
+    background-color: var(--trim);
+    margin-top: 2rem;
+    border-radius: 1rem;
 }

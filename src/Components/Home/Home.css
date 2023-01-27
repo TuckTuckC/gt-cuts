@@ -1,6 +1,5 @@
 .Home > .column2 > p {
     font-size: 1.7rem;
-    margin: 0 2rem;
     padding: 2rem;
     border-bottom: 0.15rem solid var(--light-green);
     text-align: center;
@@ -28,6 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin: 0 1rem;
 }
 
 .divider {
@@ -40,6 +40,8 @@
     background-color: var(--light-green);
     padding: 2rem;
     margin: 3rem 10rem;
+    width: 31rem;
+    height: 11rem;
 }
 
 .start {
@@ -87,13 +89,14 @@
     padding: 2rem;
 }
 
-.container {
+.home {
     flex-direction: column;
     background: none;
 }
 
 .Home {
-    margin-top: 0;
+    margin: 0;
+    box-shadow: none;
 }
 
 .carouselContainer {
@@ -105,7 +108,7 @@
 
 .carousel {
     width: 90rem;
-    height: 15rem;
+    height: 36rem;
     background-color: var(--trim);
 }
 
@@ -119,7 +122,7 @@
     position: absolute;
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 3rem;
     z-index: 2;
     top: 50%;
     transform: translateY(-50%);
@@ -134,11 +137,11 @@
 
 .carouselButton.prev {
     left: 50%;
-    transform: translate(-15rem);
+    transform: translate(-32rem);
 }
 .carouselButton.next {
     right: 50%;
-    transform: translate(15rem);
+    transform: translate(32rem);
 }
 
 .slide {
@@ -147,14 +150,16 @@
     opacity: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 30rem;
+    width: 64rem;
+    height: 36rem;
     transition: 200ms opacity ease-in-out;
     transition-delay: 200ms;
 }
 
 .slide > img {
     display: block;
-    width: 30rem;
+    width: 64rem;
+    border-radius: 2rem;
     object-fit: cover;
     object-position: center;
 }

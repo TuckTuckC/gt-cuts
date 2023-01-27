@@ -46,13 +46,14 @@ body::-webkit-scrollbar-thumb {
 
 .component {
   margin: 5rem 0 0 0;
-  padding: 2.5rem;
+  padding: 0 2.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   width: calc(100vw - 5.25rem);
   background-color: var(--trim);
   width: 90rem;
+  box-shadow: 0 0 1rem 0.1rem rgb(80, 80, 80);
 }
 
 .App {
