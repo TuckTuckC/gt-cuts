@@ -70,10 +70,10 @@ function Home({setOpened}) {
               <img src={perfectCut} alt="copper plumbing" />
             </li>
             <li className="slide">
-              <img src={cleanPanel} alt="copper plumbing" />
+              <img src={proPress} alt="copper plumbing"/>
             </li>
             <li className="slide">
-              <img src={proPress} alt="copper plumbing"/>
+              <img src={cleanPanel} alt="copper plumbing" />
             </li>
           </ul>
         </div>
