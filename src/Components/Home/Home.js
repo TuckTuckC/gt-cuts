@@ -13,10 +13,23 @@ import {useEffect, useState} from 'react';
 function Home({setOpened}) {
 
   const getStarted = document.querySelector('.GetStarted')
+  const buttons = document.querySelectorAll("[data-carousel-button]");
 
-  const start = () => {
-    setOpened(true)
-  }
+//   const change = (e) => {
+//     let button = e.target;
+//     const offset = button.dataset.carouselButton === 'next' ? 1 : -1
+//     const slides = button
+//     .closest('[data-carousel]')
+//     .querySelector('[data-slides]')
+//     const activeSlide = slides.querySelector('[data-active]');
+//     let newIndex = [...slides.children].indexOf(activeSlide) + offset
+//     if (newIndex < 0) newIndex = slides.children.length - 1;
+//     if (newIndex >= slides.children.length) newIndex = 0
+//     slides.children[newIndex].dataset.active = true;
+//     delete activeSlide.dataset.active;
+//     console.log(buttons);
+// }
+  
 
   useEffect(() => {
     const buttons = document.querySelectorAll("[data-carousel-button]");
@@ -37,8 +50,8 @@ function Home({setOpened}) {
         delete activeSlide.dataset.active;
       })
     })
-    console.log(getStarted);
-  });
+    console.log(buttons);
+  }, []);
   
 
   return (
@@ -54,13 +67,13 @@ function Home({setOpened}) {
           </button>
           <ul data-slides>
             <li className="slide" data-active>
-              <img src={proPress} alt="copper plumbing"/>
-            </li>
-            <li className="slide">
               <img src={perfectCut} alt="copper plumbing" />
             </li>
             <li className="slide">
               <img src={cleanPanel} alt="copper plumbing" />
+            </li>
+            <li className="slide">
+              <img src={proPress} alt="copper plumbing"/>
             </li>
           </ul>
         </div>
