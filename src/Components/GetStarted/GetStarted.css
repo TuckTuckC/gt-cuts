@@ -4,7 +4,6 @@
     display: flex;
     flex-direction: column;
     width: 60rem;
-    height: 50rem;
     background: linear-gradient(var(--dark-brown) 0%, #7d9460 100%);
     border-radius: 1rem;
     visibility: hidden;
@@ -29,7 +28,7 @@
 }
 
 .user {
-    font-size: 1.7rem;
+    font-size: 1rem;
     margin: 0 2rem;
     padding: 0rem;
     color: var(--light-green);
@@ -40,13 +39,26 @@
 }
 
 input {
-    margin: 2rem;
+    margin: 1rem;
     background-color: var(--trim);
     border: none;
     color: var(--light-green);
     width: 52rem;
 }
 
+textarea {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--trim);
+    border: none;
+    color: var(--light-green);
+    width: 52rem;
+    border: 0.1rem solid var(--light-green);
+}
+
 input:focus {
+    outline: none;
+}
+textarea:focus {
     outline: none;
 }

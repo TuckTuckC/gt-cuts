@@ -1,4 +1,6 @@
 import React from 'react';
+import {useState} from 'react';
+import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +8,13 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import './GetStarted.css';
 
 function GetStarted({opened, setOpened}) {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [newMessage, setNewMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   function formatPhoneNumber(value) {
     // if input value is falsy eg if the user deletes the input, then just return
@@ -46,37 +55,80 @@ function GetStarted({opened, setOpened}) {
     inputField.value = formattedInputValue;
   }
 
-  function send() {
-    let body = `A user has just submitted the GT Streamlined contact form!
-    Name: ${document.getElementById('contactName').value}
-    Number: ${document.getElementById('number').value}
-    Email: ${document.getElementById('email').value}
-    Body: ${document.getElementById('body').value}`;
-    let link = `mailto:gt.streamlined1@gmail.com?subject=${document.getElementById('subject').value}&body=${body}`
+  const submitHandler = async(e) => {
+    e.preventDefault();
+    if (!email || !subject || !message) {
+      return;
+    } else {
+      setNewMessage(
+        `A user has just submitted the GT Streamlined contact form!
+        Name: ${name}
+        Number: ${document.getElementById('number').value}
+        Email: ${email}
+        Body: ${message}`
+      )
+    }
+
+    try {
+      setLoading(true);
+
+      const {data} = await axios.post(`/api/email`, {
+        newMessage,
+      })
+      console.log(data.newMessage);
+      setLoading(false)
+    } catch (err) {
+      setLoading(false)
+      console.log(newMessage);
+    }
   }
 
   return (
-    <div className={opened ? 'GetStarted opened' : 'GetStarted'}>
+    <form onSubmit={(e) => submitHandler(e)} className={opened ? 'GetStarted opened' : 'GetStarted'}>
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
         <div className="user">
-          <input type="text"  autocomplete="off" id='contactName' placeholder='Your Name' />
+          <input 
+            type="text" 
+            id='contactName' 
+            placeholder='Your Contact Name' 
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div className="user">
-          <input type="text"  autocomplete="off" id="number" onChange={() => phoneNumberFormatter()} placeholder='Your Phone Number' />
+          <input 
+            type="text" 
+            id="number" 
+            placeholder='Your Phone Number' 
+            onChange={() => phoneNumberFormatter()} 
+          />
         </div>
         <div className="user">
-          <input type="text"  autocomplete="off" id='email' placeholder='Your Email' />
+          <input 
+            type="text" 
+            id='email' 
+            placeholder='Your Email Address' 
+            onChange={(e) => setEmail(e.target.value)} 
+          />
         </div>
         <div className="user">
-          <input type="text"  autocomplete="off" id='subject' placeholder='Subject' />
+          <input 
+            type="text" 
+            id='subject' 
+            placeholder='Subject' 
+            onChange={(e) => setSubject(e.target.value)} 
+          />
         </div>
         <div className="user">
-          <input type="text"  autocomplete="off" id='body' placeholder='Body' />
+          <textarea 
+            id='body' 
+            placeholder='Detail' 
+            onChange={(e) => setMessage(e.target.value)} 
+          />
         </div>
-          <button className="submit" onClick={() => send()}>Send</button>
-    </div>
+          <button type='submit' disabled={loading} className="submit">{loading ? 'Sending...' : 'Submit'}</button>
+    </form>
   );
 };
 

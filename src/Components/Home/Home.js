@@ -50,7 +50,6 @@ function Home({setOpened}) {
         delete activeSlide.dataset.active;
       })
     })
-    console.log(buttons);
   }, []);
   
 
