@@ -15,12 +15,15 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.post('/api/email', (req, res) => {
+app.post('/', (req, res) => {
     const { message } = req.body;
+    console.log(req);
+    console.log('hello');
     mailgun().messages().send({
         from: 'GT Streamlined <gt.streamlined1@gmail.com>',
-        to: `gt.streamlined1@gmail.com`,
-        subject: `<p>${message}</p>`,
+        to: `GT Streamlined <gt.streamlined1@gmail.com>`,
+        subject: `<p>New Email Submission</p>`,
+        text: `<p>${message}</p>`,
     },
     (error, body) => {
         if (error) {

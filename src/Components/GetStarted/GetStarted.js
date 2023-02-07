@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +11,7 @@ function GetStarted({opened, setOpened}) {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [number, setNumber] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [newMessage, setNewMessage] = useState('');
@@ -44,15 +45,12 @@ function GetStarted({opened, setOpened}) {
     )}-${phoneNumber.slice(6, 10)}`;
   }
 
-  function phoneNumberFormatter() {
-    // grab the value of what the user is typing into the input
-    const inputField = document.getElementById('number');
+  function phoneNumberFormatter(e) {
+    // Pass value to formatPhoneNumber to have it formatted
+    const formattedInputValue = formatPhoneNumber(e);
   
-    // next, we're going to format this input with the `formatPhoneNumber` function, which we'll write next.
-    const formattedInputValue = formatPhoneNumber(inputField.value);
-  
-    // Then we'll set the value of the inputField to the formattedValue we generated with the formatPhoneNumber
-    inputField.value = formattedInputValue;
+    // Set number to the newly formatted number
+    setNumber(formattedInputValue);
   }
 
   const submitHandler = async(e) => {
@@ -65,6 +63,7 @@ function GetStarted({opened, setOpened}) {
         Name: ${name}
         Number: ${document.getElementById('number').value}
         Email: ${email}
+        Subject: ${subject}
         Body: ${message}`
       )
     }
@@ -72,7 +71,7 @@ function GetStarted({opened, setOpened}) {
     try {
       setLoading(true);
 
-      const {data} = await axios.post(`/api/email`, {
+      const {data} = await axios.post(`/`, {
         newMessage,
       })
       console.log(data.newMessage);
@@ -84,13 +83,14 @@ function GetStarted({opened, setOpened}) {
   }
 
   return (
-    <form onSubmit={(e) => submitHandler(e)} className={opened ? 'GetStarted opened' : 'GetStarted'}>
+    <form onSubmit={submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
         <div className="user">
           <input 
             type="text" 
+            value={name} 
             id='contactName' 
             placeholder='Your Contact Name' 
             onChange={(e) => setName(e.target.value)}
@@ -99,14 +99,16 @@ function GetStarted({opened, setOpened}) {
         <div className="user">
           <input 
             type="text" 
+            value={number} 
             id="number" 
             placeholder='Your Phone Number' 
-            onChange={() => phoneNumberFormatter()} 
+            onChange={(e) => phoneNumberFormatter(e.target.value)} 
           />
         </div>
         <div className="user">
           <input 
             type="text" 
+            value={email} 
             id='email' 
             placeholder='Your Email Address' 
             onChange={(e) => setEmail(e.target.value)} 
@@ -115,6 +117,7 @@ function GetStarted({opened, setOpened}) {
         <div className="user">
           <input 
             type="text" 
+            value={subject} 
             id='subject' 
             placeholder='Subject' 
             onChange={(e) => setSubject(e.target.value)} 
@@ -123,11 +126,18 @@ function GetStarted({opened, setOpened}) {
         <div className="user">
           <textarea 
             id='body' 
+            value={message} 
             placeholder='Detail' 
             onChange={(e) => setMessage(e.target.value)} 
           />
         </div>
-          <button type='submit' disabled={loading} className="submit">{loading ? 'Sending...' : 'Submit'}</button>
+          <button 
+            type='submit' 
+            disabled={loading} 
+            className="submit"
+          >
+            {loading ? 'Sending...' : 'Submit'}
+          </button>
     </form>
   );
 };
