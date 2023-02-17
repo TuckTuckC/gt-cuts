@@ -5,8 +5,9 @@
     flex-direction: column;
     width: 60rem;
     background: linear-gradient(var(--dark-brown) 0%, #7d9460 100%);
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     visibility: hidden;
+    max-height: 100vh;
 }
 
 .opened {
@@ -35,14 +36,18 @@
     font-weight: 600;
     background-color: var(--trim);
     margin-top: 2rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 input {
+    align-self: center;
+    height: 3rem;
+    padding: 2rem !important;
     margin: 1rem;
     background-color: var(--trim);
     border: none;
     color: var(--light-green);
+    font-weight: 100 !important;
     width: 52rem;
     caret-color: var(--light-green);
 }
@@ -55,13 +60,28 @@ input:-webkit-autofill:focus {
 }
 
 textarea {
-    margin: 1rem;
-    padding: 1rem;
-    background-color: var(--trim);
-    border: none;
-    color: var(--light-green);
+    padding: 2rem !important;
     width: 52rem;
-    border: 0.1rem solid var(--light-green);
+    align-self: center;
+    font-weight: 100 !important;
+}
+
+.submit {
+    margin: 2rem;
+    width: 42rem;
+    height: 5rem;
+    min-height: 5rem;
+    align-self: center;
+    background-color: var(--light-green);
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    filter: grayscale(35%);
+    transition: 200ms ease;
+}
+
+.submit:hover {
+    filter: grayscale(0);
 }
 
 input:focus {
@@ -69,4 +89,9 @@ input:focus {
 }
 textarea:focus {
     outline: none;
+}
+
+.emailText {
+    margin: 0 2rem;
+    padding: 2rem;
 }

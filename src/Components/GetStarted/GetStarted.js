@@ -87,10 +87,12 @@ function GetStarted({opened, setOpened}) {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
 
     emailjs.sendForm('service_hqka8cg', 'template_4nujv4f', form.current, '-RU76Sk6CS2xlimLj')
     .then((result) => {
       console.log(result.text);
+      setLoading(false);
       setName('');
       setNumber('');
       setEmail('');
@@ -106,63 +108,58 @@ function GetStarted({opened, setOpened}) {
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
-        <div className="user">
           <input 
             type="text" 
+            className="user" 
             value={name} 
             name='user_name' 
             id='contactName' 
             placeholder='Your Contact Name' 
             onChange={(e) => setName(e.target.value)}
           />
-        </div>
-        <div className="user">
           <input 
             type="text" 
+            className="user" 
             value={number} 
             name='user_number' 
             id="number" 
             placeholder='Your Phone Number' 
             onChange={(e) => phoneNumberFormatter(e.target.value)} 
           />
-        </div>
-        <div className="user">
           <input 
             type="text" 
+            className="user" 
             value={email} 
             name='user_email' 
             id='email' 
             placeholder='Your Email Address' 
             onChange={(e) => setEmail(e.target.value)} 
           />
-        </div>
-        <div className="user">
           <input 
             type="text" 
+            className="user" 
             value={subject} 
             name='subject' 
             id='subject' 
             placeholder='Subject' 
             onChange={(e) => setSubject(e.target.value)} 
           />
-        </div>
-        <div className="user">
-          <textarea 
-            id='body' 
-            value={message} 
-            name='message' 
-            placeholder='Detail' 
-            onChange={(e) => setMessage(e.target.value)} 
-          />
-        </div>
-          <button 
-            type='submit' 
-            value='Send'
-            disabled={loading} 
-            className="submit"
-          >
-            {loading ? 'Sending...' : 'Submit'}
-          </button>
+            <textarea 
+              id='body' 
+              className="user" 
+              value={message} 
+              name='message' 
+              placeholder='Detail' 
+              onChange={(e) => setMessage(e.target.value)} 
+            />
+            <button 
+              type='submit' 
+              value='Send'
+              disabled={loading} 
+              className="submit"
+              >
+              {loading ? 'Sending...' : 'Submit'}
+            </button>
     </form>
   );
 };
