@@ -1,6 +1,7 @@
 import React from 'react';
-import {useEffect, useState} from 'react';
-import axios from 'axios';
+import {useRef, useState} from 'react';
+
+import emailjs from '@emailjs/browser';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -53,37 +54,55 @@ function GetStarted({opened, setOpened}) {
     setNumber(formattedInputValue);
   }
 
-  const submitHandler = async(e) => {
+  // const submitHandler = async(e) => {
+  //   e.preventDefault();
+  //   if (!email || !subject || !message) {
+  //     return;
+  //   } else {
+  //     setNewMessage(
+        // `A user has just submitted the GT Streamlined contact form!
+        // Name: ${name}
+        // Number: ${document.getElementById('number').value}
+        // Email: ${email}
+        // Subject: ${subject}
+        // Body: ${message}`
+  //     )
+  //   }
+
+  //   try {
+  //     setLoading(true);
+
+  //     const {data} = await axios.post(`/`, {
+  //       newMessage,
+  //     })
+  //     console.log(data.newMessage);
+  //     setLoading(false)
+  //   } catch (err) {
+  //     setLoading(false)
+  //     console.log(newMessage);
+  //   }
+  // }
+
+  const form = useRef();
+
+  const submitHandler = (e) => {
     e.preventDefault();
-    if (!email || !subject || !message) {
-      return;
-    } else {
-      setNewMessage(
-        `A user has just submitted the GT Streamlined contact form!
-        Name: ${name}
-        Number: ${document.getElementById('number').value}
-        Email: ${email}
-        Subject: ${subject}
-        Body: ${message}`
-      )
-    }
 
-    try {
-      setLoading(true);
-
-      const {data} = await axios.post(`/`, {
-        newMessage,
-      })
-      console.log(data.newMessage);
-      setLoading(false)
-    } catch (err) {
-      setLoading(false)
-      console.log(newMessage);
-    }
+    emailjs.sendForm('service_hqka8cg', 'template_4nujv4f', form.current, '-RU76Sk6CS2xlimLj')
+    .then((result) => {
+      console.log(result.text);
+      setName('');
+      setNumber('');
+      setEmail('');
+      setSubject('');
+      setMessage('');
+    }, (error) => {
+      console.log(error.text);
+    });
   }
 
   return (
-    <form onSubmit={submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
+    <form ref={form} onSubmit={submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
@@ -91,6 +110,7 @@ function GetStarted({opened, setOpened}) {
           <input 
             type="text" 
             value={name} 
+            name='user_name' 
             id='contactName' 
             placeholder='Your Contact Name' 
             onChange={(e) => setName(e.target.value)}
@@ -100,6 +120,7 @@ function GetStarted({opened, setOpened}) {
           <input 
             type="text" 
             value={number} 
+            name='user_number' 
             id="number" 
             placeholder='Your Phone Number' 
             onChange={(e) => phoneNumberFormatter(e.target.value)} 
@@ -109,6 +130,7 @@ function GetStarted({opened, setOpened}) {
           <input 
             type="text" 
             value={email} 
+            name='user_email' 
             id='email' 
             placeholder='Your Email Address' 
             onChange={(e) => setEmail(e.target.value)} 
@@ -118,6 +140,7 @@ function GetStarted({opened, setOpened}) {
           <input 
             type="text" 
             value={subject} 
+            name='subject' 
             id='subject' 
             placeholder='Subject' 
             onChange={(e) => setSubject(e.target.value)} 
@@ -127,12 +150,14 @@ function GetStarted({opened, setOpened}) {
           <textarea 
             id='body' 
             value={message} 
+            name='message' 
             placeholder='Detail' 
             onChange={(e) => setMessage(e.target.value)} 
           />
         </div>
           <button 
             type='submit' 
+            value='Send'
             disabled={loading} 
             className="submit"
           >
