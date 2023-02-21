@@ -4,7 +4,7 @@ import './Services.css';
 
 function Services() {
   return (
-    <div className='component services'>
+    <div id='section2' className='component services'>
       <h1 className="title">Services</h1>
       <div className="categories">
         <div className="serviceList">

@@ -4,7 +4,7 @@ import './About.css';
 
 function About() {
   return (
-    <div className='component about'>
+    <div id='section3' className='component about'>
       <h1 className='title'>About Us</h1>
       <div className="info">
         <h2 className='infoTitle title'>What We Are</h2>
