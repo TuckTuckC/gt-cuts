@@ -17,6 +17,7 @@ function GetStarted({opened, setOpened}) {
   const [message, setMessage] = useState('');
   const [newMessage, setNewMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const form = useRef();
 
   function formatPhoneNumber(value) {
     // if input value is falsy eg if the user deletes the input, then just return
@@ -54,36 +55,6 @@ function GetStarted({opened, setOpened}) {
     setNumber(formattedInputValue);
   }
 
-  // const submitHandler = async(e) => {
-  //   e.preventDefault();
-  //   if (!email || !subject || !message) {
-  //     return;
-  //   } else {
-  //     setNewMessage(
-        // `A user has just submitted the GT Streamlined contact form!
-        // Name: ${name}
-        // Number: ${document.getElementById('number').value}
-        // Email: ${email}
-        // Subject: ${subject}
-        // Body: ${message}`
-  //     )
-  //   }
-
-  //   try {
-  //     setLoading(true);
-
-  //     const {data} = await axios.post(`/`, {
-  //       newMessage,
-  //     })
-  //     console.log(data.newMessage);
-  //     setLoading(false)
-  //   } catch (err) {
-  //     setLoading(false)
-  //     console.log(newMessage);
-  //   }
-  // }
-
-  const form = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -104,7 +75,7 @@ function GetStarted({opened, setOpened}) {
   }
 
   return (
-    <form ref={form} onSubmit={submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
+    <form ref={form} onSubmit={() => submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
