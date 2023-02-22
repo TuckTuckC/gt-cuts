@@ -59,3 +59,15 @@ body::-webkit-scrollbar-thumb {
 .App {
   margin-bottom: 10rem;
 }
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 10px;
+    max-width: 600px;
+    overflow: hidden;
+  }
+
+  * {
+    max-width: 600px;
+  }
+}
