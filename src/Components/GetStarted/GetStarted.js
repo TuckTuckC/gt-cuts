@@ -75,7 +75,7 @@ function GetStarted({opened, setOpened}) {
   }
 
   return (
-    <form ref={form} onSubmit={() => submitHandler} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
+    <form ref={form} onSubmit={(e) => submitHandler(e)} id='contactForm' className={opened ? 'GetStarted opened' : 'GetStarted'}>
         <button className="close closeBtn" onClick={() => setOpened(false)}>
           <FontAwesomeIcon className='nav-icon closeIcon' icon={faXmark} />
         </button>
