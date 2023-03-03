@@ -1,97 +1,100 @@
-.GetStarted {
-    z-index: 3;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    width: 60rem;
-    background: linear-gradient(var(--dark-brown) 0%, #7d9460 100%);
-    border-radius: 0.5rem;
-    visibility: hidden;
-    max-height: 100vh;
+@media only screen and (min-width: 1025px) {
+    .GetStarted {
+        z-index: 3;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 60rem;
+        background: linear-gradient(var(--dark-brown) 0%, #7d9460 100%);
+        border-radius: 0.5rem;
+        visibility: hidden;
+        max-height: 100vh;
+    }
+    
+    .opened {
+        top: 50%;
+        transform: translateY(-50%);
+        visibility: visible;
+        transition: 200ms;
+        transition-delay: 200ms;
+    }
+    
+    .closeBtn {
+        margin-bottom: 0rem;
+        display: flex;
+        align-self: flex-end;
+    }
+    
+    .closeIcon {
+        padding: 1rem;
+    }
+    
+    .user {
+        font-size: 1rem;
+        margin: 0 2rem;
+        padding: 0rem;
+        color: var(--light-green);
+        font-weight: 600;
+        background-color: var(--trim);
+        margin-top: 2rem;
+        border-radius: 0.5rem;
+    }
+    
+    input {
+        align-self: center;
+        height: 3rem;
+        padding: 2rem !important;
+        margin: 1rem;
+        background-color: var(--trim);
+        border: none;
+        color: var(--light-green);
+        font-weight: 100 !important;
+        width: 52rem;
+        caret-color: var(--light-green);
+    }
+    
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: var(--light-green);
+        -webkit-box-shadow: 0 0 0px 1000px var(--trim) inset;
+    }
+    
+    textarea {
+        padding: 2rem !important;
+        width: 52rem;
+        align-self: center;
+        font-weight: 100 !important;
+    }
+    
+    .submit {
+        margin: 2rem;
+        width: 42rem;
+        height: 5rem;
+        min-height: 5rem;
+        align-self: center;
+        background-color: var(--light-green);
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        filter: grayscale(35%);
+        transition: 200ms ease;
+    }
+    
+    .submit:hover {
+        filter: grayscale(0);
+    }
+    
+    input:focus {
+        outline: none;
+    }
+    textarea:focus {
+        outline: none;
+    }
+    
+    .emailText {
+        margin: 0 2rem;
+        padding: 2rem;
+    }
 }
 
-.opened {
-    top: 50%;
-    transform: translateY(-50%);
-    visibility: visible;
-    transition: 200ms;
-    transition-delay: 200ms;
-}
-
-.closeBtn {
-    margin-bottom: 0rem;
-    display: flex;
-    align-self: flex-end;
-}
-
-.closeIcon {
-    padding: 1rem;
-}
-
-.user {
-    font-size: 1rem;
-    margin: 0 2rem;
-    padding: 0rem;
-    color: var(--light-green);
-    font-weight: 600;
-    background-color: var(--trim);
-    margin-top: 2rem;
-    border-radius: 0.5rem;
-}
-
-input {
-    align-self: center;
-    height: 3rem;
-    padding: 2rem !important;
-    margin: 1rem;
-    background-color: var(--trim);
-    border: none;
-    color: var(--light-green);
-    font-weight: 100 !important;
-    width: 52rem;
-    caret-color: var(--light-green);
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--light-green);
-    -webkit-box-shadow: 0 0 0px 1000px var(--trim) inset;
-}
-
-textarea {
-    padding: 2rem !important;
-    width: 52rem;
-    align-self: center;
-    font-weight: 100 !important;
-}
-
-.submit {
-    margin: 2rem;
-    width: 42rem;
-    height: 5rem;
-    min-height: 5rem;
-    align-self: center;
-    background-color: var(--light-green);
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 0.5rem;
-    filter: grayscale(35%);
-    transition: 200ms ease;
-}
-
-.submit:hover {
-    filter: grayscale(0);
-}
-
-input:focus {
-    outline: none;
-}
-textarea:focus {
-    outline: none;
-}
-
-.emailText {
-    margin: 0 2rem;
-    padding: 2rem;
-}
