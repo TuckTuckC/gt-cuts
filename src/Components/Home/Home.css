@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1025px) {
+
     .Home > .column2 > p {
         font-size: 1.7rem;
         padding: 2rem;
@@ -170,5 +170,3 @@
         transition-delay: 0ms;
         z-index: 1;
     }
-}
-

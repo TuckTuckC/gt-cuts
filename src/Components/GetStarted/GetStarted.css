@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1025px) {
+
     .GetStarted {
         z-index: 3;
         position: fixed;
@@ -96,5 +96,4 @@
         margin: 0 2rem;
         padding: 2rem;
     }
-}
 
